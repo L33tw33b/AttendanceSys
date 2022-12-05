@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,9 +38,9 @@ namespace AttendanceSys
 
         // Misc
         int i = 0;
-        string[] name = new string[2000];
-        string[] tele = new string[2000];
-        string[] card = new string[2000];
+        ArrayList name = new ArrayList();
+        ArrayList tele = new ArrayList();
+        ArrayList card = new ArrayList();
         
 
         public Form1()
@@ -78,15 +79,15 @@ namespace AttendanceSys
             wb = excelApp.Workbooks.Open($@"{exceldir}");
             ws = wb.ActiveSheet;
             for (int i = 0; i < ws.UsedRange.Rows.Count; i++) {
-                name[i] = Convert.ToString(ws.Cells[i + 1, namepos].Value);
+                name.Add(Convert.ToString(ws.Cells[i + 1, namepos].Value));
             }
             for (int i = 0; i < ws.UsedRange.Rows.Count  ; i++)
             {
-                tele[i] = Convert.ToString(ws.Cells[i + 1, telepos].Value);
+                tele.Add(Convert.ToString(ws.Cells[i + 1, telepos].Value));
             }
             for (int i = 0; i < ws.UsedRange.Rows.Count ; i++)
             {
-                card[i] = Convert.ToString(ws.Cells[i + 1, cardpos].Value);
+                card.Add(Convert.ToString(ws.Cells[i + 1, cardpos].Value));
             }
             wb.Close(0);
             excelApp.Quit();
@@ -105,8 +106,8 @@ namespace AttendanceSys
                 bool found = false;
                 int i = 0;
                 if (txt_input.TextLength == 8) { // User input == Telephone number
-                    for (;i < tele.Length;i++) {
-                        if (txt_input.Text == tele[i]) { // Excel Cells[y,x]
+                    for (;i < tele.Count;i++) {
+                        if (txt_input.Text == (string) tele[i]) { // Excel Cells[y,x]
                             found = true;
                             using (StreamWriter sw = File.AppendText($@"{textdir}{DateTime.UtcNow.Date.ToString("dd_MM_yyyy")}.txt")) {
                                 sw.WriteLine(/*ws.Cells[i, namepos].Value.ToString()*/string.Format("{0,-25}{1,-30}", name[i], DateTime.Now.ToString())) ;
@@ -117,9 +118,9 @@ namespace AttendanceSys
                     }
                 }
                 else if (txt_input.TextLength == 10) { // User input == Card ID
-                    for (; i < card.Length; i++)
+                    for (; i < card.Count; i++)
                     {
-                        if (txt_input.Text == card[i])
+                        if (txt_input.Text == (string) card[i])
                         {
                             found = true;
                             using (StreamWriter sw = File.AppendText($@"{textdir}{DateTime.UtcNow.Date.ToString("dd_MM_yyyy")}.txt"))
