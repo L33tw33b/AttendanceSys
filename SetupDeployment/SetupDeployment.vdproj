@@ -52,13 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DD63600312F21752C51CF3C8E44792EB"
+        "OwnerKey" = "8:_F6B7CF18E4E64832B1953D79921948AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F6B7CF18E4E64832B1953D79921948AA"
+        "OwnerKey" = "8:_DD63600312F21752C51CF3C8E44792EB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +79,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -95,6 +111,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -265,7 +289,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_90F392361A8E4655B64B93AB23BB70CB"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[DesktopFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -314,7 +338,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:AttendenceSystem"
         "ProductCode" = "8:{F65A49CD-FDDE-4ED9-9275-3937513C67F4}"
-        "PackageCode" = "8:{2BB8B40B-9146-43DD-B224-11A076633285}"
+        "PackageCode" = "8:{91471D46-0AE4-4AB6-A66D-19C9D6D7AB71}"
         "UpgradeCode" = "8:{D12E9680-B9DF-4612-AF25-808201E87359}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -891,7 +915,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F6B7CF18E4E64832B1953D79921948AA"
             {
-            "SourcePath" = "8:..\\AttendanceSys\\obj\\Release\\AttendanceSys.exe"
+            "SourcePath" = "8:..\\AttendanceSys\\obj\\Debug\\AttendanceSys.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_90F392361A8E4655B64B93AB23BB70CB"
